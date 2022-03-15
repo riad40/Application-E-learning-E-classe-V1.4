@@ -55,6 +55,22 @@
         You already have an account
         <a href="index.php" class="fw-bold text-info">Sign In</a>
       </p>
+      <?php
+          if (isset($_GET["error"])) {
+            if ($_GET["error"] == "emptyInput") {
+                echo '<div class="alert alert-danger text-center">Please fill all fileds</div>';
+            }
+            else if ($_GET["error"] == "invalidEmail") {
+                echo '<div class="alert alert-danger text-center">Please enter a vali email</div>';
+            }
+            else if ($_GET["error"] == "passwordsdontmatch") {
+              echo '<div class="alert alert-danger text-center">Passwords dosent match</div>';
+            }
+            else if ($_GET["error"] == "emailAlreadyExist") {
+              echo '<div class="alert alert-danger text-center">This email is already exist</div>';
+            }
+          }
+      ?>
     </div>
   </div>
   <script src="./js/bootstrap.js"></script>
