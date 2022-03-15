@@ -140,7 +140,7 @@
               <td class="pt-4" style="white-space: nowrap !important;"><?php  echo $student['date_of_admession'];  ?>
               </td>
               <?php echo '<td class="pt-4"><a href="edit.php?id='.$student['id'].'"><img src="./images/pen.svg" alt="pen" /></a></td>' ?>
-              <?php echo '<td class="pt-4"><a href="remove.php?id='.$student['id'].'"><img src="./images/trash.svg" alt="trash" /></a></td>' ?>
+              <?php echo '<td class="pt-4"><a href="remove.php?id='.$student['id'].'" id="delete"><img src="./images/trash.svg" alt="trash" /></a></td>' ?>
             </tr>
           <?php }  ?>
           </tbody>
@@ -150,14 +150,7 @@
   </div>
 
   <script src="./js/bootstrap.js"></script>
-
-  <script>
-  var element = document.getElementById("page");
-  var toggleButton = document.getElementById("menu-toggle");
-  toggleButton.onclick = function() {
-    element.classList.toggle("toggled");
-  };
-  </script>
+  <script src="js/script.js"></script>
 
 </body>
 </html>

@@ -3,8 +3,8 @@
 if (isset($_POST["signup"])) {
   $name = $_POST['fname'];
   $email = $_POST['email'];
-  $pwd = $_POST['password'];
-  $Rpwd = $_POST['Rpassword'];
+  $pwd = md5($_POST['password']);
+  $Rpwd = md5($_POST['Rpassword']);
 
   include 'db_conn.php';
   include 'functions.php';

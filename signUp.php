@@ -69,6 +69,9 @@
             else if ($_GET["error"] == "emailAlreadyExist") {
               echo '<div class="alert alert-danger text-center">This email is already exist</div>';
             }
+            else if ($_GET["error"] == "none") {
+              echo '<div class="alert alert-success text-center">ur account has been created successfully</div>';
+            }
           }
       ?>
     </div>

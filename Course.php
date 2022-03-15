@@ -137,16 +137,7 @@
     </div>
 
     <script src="./js/bootstrap.js"></script>
-
-    <script>
-    var element = document.getElementById("page");
-    var toggleButton = document.getElementById("menu-toggle");
-    toggleButton.onclick = function() {
-      element.classList.toggle("toggled");
-    };
-    </script>
-
-
+    <script src="js/script.js"></script>
 
 </body>
 
