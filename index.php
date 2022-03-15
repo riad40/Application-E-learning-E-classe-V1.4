@@ -57,6 +57,10 @@
                     SIGN IN
                 </button>
 
+                <p class="text-center fw-500">
+                    or <a href="signUp.php" class="fw-bold text-info">Sign Up</a>
+                </p>
+
             </form>
             <p class="text-center fw-500">
                 Forgot your password?
