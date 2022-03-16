@@ -10,13 +10,14 @@ if (isset($_POST["signup"])) {
   include 'functions.php';
 
   if (emptyInputSignup($name, $email, $pwd, $Rpwd) === true ) {
-    header("location: ../signUp.php?error=emptyInput");
+    header("location: ../signUp.php?error=emptyinputs");
     exit();
   }
   if (invalidEmail($email) === true ) {
-    header("location: ../signUp.php?error=invalidEmail");
+    header("location: ../signUp.php?error=invalidemail");
     exit();
   }
+
   if (passwordMatch($pwd, $Rpwd) === true ) {
     header("location: ../signUp.php?error=passwordsdontmatch");
     exit();

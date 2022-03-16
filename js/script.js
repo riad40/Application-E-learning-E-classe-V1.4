@@ -1,3 +1,4 @@
+// button toggle
 const element = document.getElementById("page");
 const toggleButton = document.getElementById("menu-toggle");
 toggleButton.onclick = function() {
@@ -5,3 +6,5 @@ toggleButton.onclick = function() {
 }
 
 // delete confirmation
+
+

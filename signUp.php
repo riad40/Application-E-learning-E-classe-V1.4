@@ -21,6 +21,12 @@
   ::placeholder {
     font-size: smaller;
   }
+
+  .error {
+    font-size: 17px;
+    margin-top: 6px;
+  }
+
   </style>
 </head>
 
@@ -34,20 +40,21 @@
       <p class="text-center text-secondary fw-lighter">
         Enter your credentials to create your account
       </p>
-      <form action="includes/signUp-script.php" method="POST" class="mt-5">
-        <label class="mb-2 fw-bold text-secondary">Full Name</label>
-        <input type="text" class="form-control py-2" name="fname" placeholder="Enter your full name" />
+      <form action="includes/signUp-script.php" method="POST" class="mt-5" id="upForm">
+      <div id="error"></div>
+        <label for="upName" class="mb-2 fw-bold text-secondary">Full Name</label>
+        <input type="text" class="form-control py-2" name="fname" id="upName" placeholder="Enter your full name" />
 
-        <label class="mb-2 fw-bold text-secondary">Email</label>
-        <input type="email" class="form-control py-2" name="email" placeholder="Enter your email" />
+        <label for="upEmail" class="mb-2 fw-bold mt-3 text-secondary">Email</label>
+        <input type="email" class="form-control py-2" name="email" id="upEmail" placeholder="Enter your email" />
 
-        <label class="mb-2 fw-bold mt-3 text-secondary">Password</label>
-        <input type="password" class="form-control py-2" name="password" placeholder="Enter your password" />
+        <label for="upPwd" class="mb-2 fw-bold mt-3 text-secondary">Password</label>
+        <input type="password" class="form-control py-2" name="password" id="upPwd" placeholder="Enter your password" />
 
-        <label class="mb-2 fw-bold mt-3 text-secondary">Repeat Your Password</label>
-        <input type="password" class="form-control py-2" name="Rpassword" placeholder="Repeat your password" />
+        <label for="upRpwd" class="mb-2 fw-bold mt-3 text-secondary">Repeat Your Password</label>
+        <input type="password" class="form-control py-2" name="Rpassword" id="upRpwd" placeholder="Repeat your password" />
 
-        <button type="submit" name="signup" class="btn fw-500 text-light btn-info w-100 my-4">
+        <button type="submit" name="signup" id="signup" class="btn fw-500 text-light btn-info w-100 my-4">
           SIGN UP
         </button>
       </form>
@@ -57,11 +64,12 @@
       </p>
       <?php
           if (isset($_GET["error"])) {
-            if ($_GET["error"] == "emptyInput") {
-                echo '<div class="alert alert-danger text-center">Please fill all fileds</div>';
+
+            if ($_GET["error"] == "emptyinputs") {
+              echo '<div class="alert alert-danger text-center">Fill all the fields</div>';
             }
-            else if ($_GET["error"] == "invalidEmail") {
-                echo '<div class="alert alert-danger text-center">Please enter a vali email</div>';
+            else if ($_GET["error"] == "invalidemail") {
+              echo '<div class="alert alert-danger text-center">Invalid email format</div>';
             }
             else if ($_GET["error"] == "passwordsdontmatch") {
               echo '<div class="alert alert-danger text-center">Passwords dosent match</div>';
@@ -69,14 +77,12 @@
             else if ($_GET["error"] == "emailAlreadyExist") {
               echo '<div class="alert alert-danger text-center">This email is already exist</div>';
             }
-            else if ($_GET["error"] == "none") {
-              echo '<div class="alert alert-success text-center">ur account has been created successfully</div>';
-            }
           }
       ?>
     </div>
   </div>
-  <script src="./js/bootstrap.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/upValid.js"></script>
 </body>
 
 </html>

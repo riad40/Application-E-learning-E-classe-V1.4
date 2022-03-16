@@ -41,12 +41,13 @@
             <p class="text-center text-secondary fw-lighter">
                 Enter your credentials to access your account
             </p>
-            <form action="includes/login-script.php" method="POST" class="mt-5">
+            <form action="includes/login-script.php" method="POST" class="mt-5" id="inForm">
+                <div id="error"></div>
                 <label class="mb-2 fw-bold text-secondary">Email</label>
-                <input type="email" class="form-control py-2" name="email" placeholder="Enter your email" value="<?php if(isset($_COOKIE['email'])){echo $_COOKIE['email']; }  ?>"/>
+                <input type="email" class="form-control py-2" name="email" placeholder="Enter your email" value="<?php if(isset($_COOKIE['email'])){echo $_COOKIE['email']; }  ?>" id="inEmail"/>
 
                 <label class="mb-2 fw-bold mt-3 text-secondary">Password</label>
-                <input type="password" class="form-control py-2" name="password" placeholder="Enter your password" value="<?php if(isset($_COOKIE['password'])){echo $_COOKIE['password']; }  ?>"/>
+                <input type="password" class="form-control py-2" name="password" placeholder="Enter your password" value="<?php if(isset($_COOKIE['password'])){echo $_COOKIE['password']; }  ?>" id="inPwd"/>
 
                 <div class="form-check mt-3">
                     <input type="checkbox" name="check" class="form-check-input" id="exampleCheck1" <?php if(isset($_COOKIE['email']) && isset($_COOKIE['password'])){?> checked <?php }?>>
@@ -68,17 +69,43 @@
             </p>
             <?php
                 if (isset($_GET["error"])) {
-                if ($_GET["error"] == "emptyInput") {
-                    echo '<div class="alert alert-danger text-center">Please fill all fileds</div>';
-                }
-                else if ($_GET["error"] == "wronglogin") {
-                    echo '<div class="alert alert-danger text-center">incorrect login informations</div>';
-                }
+                    if ($_GET["error"] == "emptyInput") {
+                        echo '<div class="alert alert-danger text-center">Please fill all fileds</div>';
+                    }
+                    else if ($_GET["error"] == "wronglogin") {
+                        echo '<div class="alert alert-danger text-center">incorrect login informations</div>';
+                    }            
+                    else if ($_GET["error"] == "none") {
+                        echo '<div class="alert alert-success text-center">ur account has been created successfully Enter your informations so you can acces to ur account</div>';
+                    }
                 }
             ?>
         </div>
     </div>
-    <script src="./js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+        // grab dom elements
+        
+        const inEmail = document.querySelector('#inEmail')
+        const inPwd = document.querySelector('#inPwd')
+        const inForm = document.getElementById('inForm')
+        const myError = document.getElementById('error')
+
+        inForm.addEventListener('submit', (e) => {
+
+            let errors = []
+
+            // check for empty inputs
+            if (inEmail.value == '' || inPwd.value == '') {
+                errors.push('Please fill all the fildes')
+            }
+
+            if (errors.length > 0) {
+                e.preventDefault()
+                myError.innerHTML = '<div class="alert alert-danger text-center">' + errors.join() + '</div>'
+            }
+        })
+    </script>
 </body>
 
 </html>
