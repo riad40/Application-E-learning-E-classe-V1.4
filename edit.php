@@ -51,7 +51,7 @@
       <label class="form-labe mb-2" for="date">Date Of Admession</label>
       <input class="form-control mb-3" type="date" id="date" name="date" value="<?php echo $date; ?>">
     </div>
-    <input type="submit" name="save" class="btn btn-info" value="Update">
+    <input onclick="return confirm(' are u sure u want to save this changes')" type="submit" name="save" class="btn btn-info" value="Update">
   </form>
   </div>
 

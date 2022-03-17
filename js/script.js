@@ -7,4 +7,13 @@ toggleButton.onclick = function() {
 
 // delete confirmation
 
+// const remove = document.getElementById('rmvForJs')
 
+// remove.addEventListener('submit', (e) => {
+//   alert('yas')
+//   return checkDelete()
+// })
+
+// function checkDelete() {
+//   return confirm('are u sure u want to delete this record')
+// }

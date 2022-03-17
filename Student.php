@@ -140,7 +140,7 @@
               <td class="pt-4" style="white-space: nowrap !important;"><?php  echo $student['date_of_admession'];  ?>
               </td>
               <?php echo '<td class="pt-4"><a href="edit.php?id='.$student['id'].'"><img src="./images/pen.svg" alt="pen" /></a></td>' ?>
-              <?php echo '<td class="pt-4"><a href="remove.php?id='.$student['id'].'" id="delete"><img src="./images/trash.svg" alt="trash" /></a></td>' ?>
+              <?php echo '<td class="pt-4"><a onclick="return confirm(\' are u sure u want to delete this student\')" href="remove.php?id='.$student['id'].'" id="delete"><img src="./images/trash.svg" alt="trash" /></a></td>' ?>
             </tr>
           <?php }  ?>
           </tbody>

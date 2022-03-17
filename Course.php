@@ -129,7 +129,7 @@
             <td style="padding: 15px 5px !important; white-space: nowrap !important;"><?php echo $course['assigned_by'] ?></td>
             <td style="padding: 15px 5px !important; white-space: nowrap !important;"><?php echo $course['assigned_at'] ?></td>
             <?php echo '<td style="padding: 5px !important;"><a href="editc.php?id='.$course['id'].'" class="btn btn-info text-light"> Edit </a></td>'; ?>
-            <?php echo '<td style="padding: 5px !important;"><a href="removec.php?id='.$course['id'].'" class="btn btn-danger text-light"> Delete </a></td>'; ?>
+            <?php echo '<td style="padding: 5px !important;"><a onclick="return confirm(\' are u sure u want to delete this course\')" href="removec.php?id='.$course['id'].'" class="btn btn-danger text-light"> Delete </a></td>'; ?>
           </tr>
           <?php } ?>
         </tbody>
