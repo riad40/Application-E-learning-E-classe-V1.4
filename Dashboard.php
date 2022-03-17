@@ -33,12 +33,7 @@
           header("location: index.php");
           exit();
         }
-        // else {
-        //   if(!isset($_COOKIE['lifetime'])) {
-        //     header("location: index.php");
-        //     exit();
-        //   }
-        // }
+
         include './includes/time-logout.php';
         ?>
 
@@ -101,7 +96,7 @@
     </div>
   </div>
 
-  <script src="./js/bootstrap.js"></script>
+  <script src="./js/bootstrap.js"></scrip>
   <script src="js/script.js"></script>
 
 </body>
